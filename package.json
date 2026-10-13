@@ -1,0 +1,10 @@
+{
+  "name": "tiny-session-keeper",
+  "version": "1.0.0",
+  "description": "Tiny TypeScript session keeper for a persistent agent browser. Detects restarts, scopes shared logins per conversation, and sweeps idle sessions. No API key. No network.",
+  "main": "session.ts",
+  "scripts": { "start": "tsx session.ts", "typecheck": "tsc --noEmit" },
+  "author": "Bobby Hall Jr",
+  "license": "MIT",
+  "devDependencies": { "@types/node": "^22.10.0", "tsx": "^4.19.2", "typescript": "^5.7.2" }
+}

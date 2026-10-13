@@ -1,0 +1,19 @@
+
+=== Demo 1: one login, two conversations ===
+t+00m billing  [LOGIN] billing.example (human finished sign-in)
+t+04m billing  [ACT  ] download September invoice on billing.example (tab kept, browser-1)
+t+06m research [OPEN ] docs.example in browser-1
+t+07m research [BLOCK] export customer list: research has no grant for billing.example (login belongs to billing)
+t+09m billing  [ACT  ] update card on file on billing.example (tab kept, browser-1)
+
+=== Demo 2: the browser does not wait for you ===
+t+00m billing  [LOGIN] billing.example (human finished sign-in)
+t+03m billing  [ACT  ] download September invoice on billing.example (tab kept, browser-1)
+t+15m [SWEEP] browser-1 idle 12m, closed
+t+18m billing  [RESTART] browser-2 restarted: true, lost login:billing.example, tab:billing
+t+18m billing  [STOP ] submit refund: plan assumed a login that no longer exists. Ask a human to sign in again.
+t+19m billing  [LOGIN] billing.example (human signed in again)
+t+20m billing  [ACT  ] submit refund on billing.example (tab kept, browser-2)
+t+22m [CRASH] browser died (simulated)
+t+23m billing  [RESTART] browser-3 restarted: true, lost login:billing.example, tab:billing
+t+23m billing  [STOP ] check refund status: plan assumed a login that no longer exists. Ask a human to sign in again.
