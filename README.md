@@ -26,3 +26,5 @@ See `output.txt`. Every site, timing, and idle limit is an example input.
 ## License
 
 MIT
+
+Read the write-up on Dev.to: https://dev.to/bobbyhalljr/cloudflare-gave-agents-a-browser-that-remembers-lets-build-a-tiny-session-keeper-in-typescript-230c
